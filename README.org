@@ -1,0 +1,18 @@
+#+TITLE: Cannot: Annotation tool for Sequence Labelling
+#+AUTHOR: Yuto Kisuge <mail@yo.eki.do>
+
+Cannot is a general-purpose annotation tool for sequence labelling problems, especially targeted to be used together with CRFSuite (Okazaki, 2007).
+
+* Todo
+- Edit readme
+
+* License
+  Licensed under the MIT License.
+
+  This application used [[https://github.com/biola/sinatra-boilerplate][sinatra-boilerplate]] by Biola University as a boilerplate code.
+  Sinatra-boilerplate is licensed under the MIT License.
+  For more details about its license, see [[https://github.com/biola/sinatra-boilerplate/blob/master/MIT-LICENSE][this]].
+
+  This application used load6 from [[https://github.com/lukehaas/css-loaders][Single Element CSS Spinners]] by Luke Haas.
+  Load6 is licensed under the MIT License.
+  For more details about its license, see [[https://github.com/lukehaas/css-loaders/blob/step2/LICENSE][this]].

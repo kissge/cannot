@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cannot</title>
+        <meta charset="utf-8" />
+        <%= stylesheet_tag 'application' %>
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <%= javascript_tag 'application' %>
+    </head>
+    <body>
+        <div id="loading"><div></div></div>
+        <nav id="global">
+            <span id="user">-</span>
+            /
+            <span id="name">-</span>
+            /
+            <span id="clock">0:00:00</span>
+            / ✓
+            <span id="count-done">0 (NaN%)</span>
+            / ?
+            <span id="count-question">0</span>
+            / TOTAL
+            <span id="count-total">0</span>
+            <a id="export">Export</a>
+            <a id="uncheck">Uncheck All</a>
+            <a id="automation">Automation</a>
+            <a id="open">Open</a>
+        </nav>
+        <nav id="files" style="display: none;">
+            <h1>Cannot: Annotation tool for Sequence Labelling</h1>
+            <div>
+                <div>
+                    <select id="select-name" size="5">
+                    </select>
+                </div>
+                <div class="invisible">
+                    <select id="select-user" size="5">
+                    </select>
+                    <button id="button-open">Open</button>
+                    <input id="text-new" />
+                    <button id="button-new">New</button>
+                </div>
+            </div>
+        </nav>
+        <script>
+         $(function(){_.openDialog().done(_.ready)});
+        </script>
+    </body>
+</html>

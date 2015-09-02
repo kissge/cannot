@@ -1,0 +1,45 @@
+<% @data['data'].each_with_index do |sect, i| %>
+    <% inconsistent = (@annotation and @annotation[i]['labels'].length != sect['nodes'].length) %>
+    <section class="section <%= 'done' if @annotation and @annotation[i]['done']
+                         %> <%= 'question' if @annotation and @annotation[i]['question'] or inconsistent
+                         %> <%= 'inconsistent' if inconsistent %>"
+             data-stored="<%= h MultiJson.dump(@annotation[i]['labels']) if @annotation %>">
+        <header>
+            <a name="<%= i + 1 %>">#<%= i + 1 %></a>
+            <div class="tools">
+                <i class="done">✓</i>
+                <i class="question">?</i>
+            </div>
+            <% sect['shared_features'].each do |f| %>
+                <div class="shared-feature"
+                     <%= %( style="background-color: #{h @data['feature_color'][f]};") if @data['feature_color'].has_key?(f) %>>
+                    <%= f %>
+                </div>
+            <% end  %>
+            <span class="invisible"> <%# for search %>
+                <%= h sect['nodes'].map{|n| n['surface']}.join %>
+                <%= h sect['nodes'].map{|n| n['surface']}.join ' ' %>
+            </span>
+        </header>
+        <% sect['nodes'].each_with_index do |node, j| %>
+            <div class="node"<%= " style=\"background-color: #{h (@data['labels'].find {|lab| @annotation[i]['labels'][j] == lab['id'] })['color']};\"" if @annotation and @annotation[i]['labels'].length > j %>>
+                <div class="surface"><%= h node['surface'] %></div>
+                <div class="features">
+                    <% node['features'].each do |f| %>
+                        <div class="feature"
+                             <%= %( style="background-color: #{h @data['feature_color'][f]};") if @data['feature_color'].has_key?(f) %>>
+                            <%= h f %>
+                        </div>
+                    <% end  %>
+                </div>
+                <select class="label">
+                    <% @data['labels'].each do |lab| %>
+                        <option value="<%= h lab['id'] %>"
+                                data-color="<%= h lab['color'] %>"
+                                <%= 'selected' if @annotation and @annotation[i]['labels'].length > j and @annotation[i]['labels'][j] == lab['id']%>><%= h lab['name'] %></option>
+                    <% end %>
+                </select>
+            </div>
+        <% end %>
+    </section>
+<% end %>

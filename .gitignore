@@ -1,0 +1,32 @@
+*.gem
+*.rbc
+.bundle
+.config
+.sass-cache
+coverage
+InstalledFiles
+lib/bundler/man
+pkg
+rdoc
+spec/reports
+test/tmp
+test/version_tmp
+tmp
+vendor
+
+# YARD artifacts
+.yardoc
+_yardoc
+doc/
+
+# App specific
+config/*.yml
+config/blazing.rb
+log
+data/data/*
+data/annotations/*
+*.pyc
+bin/crfsuite
+bin/crfutils.py
+bin/chunking.py
+bin/chunking
