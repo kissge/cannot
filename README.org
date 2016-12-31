@@ -3,6 +3,9 @@
 
 Cannot is a general-purpose annotation tool for sequence labelling problems, especially targeted to be used together with CRFSuite (Okazaki, 2007).
 
+* Acknowledgment
+  Quite large part of this work was done while the author was working as a part-time engineer at [[http://vorkers.jp/][Vorkers inc.]].
+
 * Todo
 - Edit readme
 
